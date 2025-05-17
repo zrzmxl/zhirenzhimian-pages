@@ -6,17 +6,11 @@
   <title>知人知面 - 首页</title>
   <style>
     @font-face {
-      font-family: 'XiqueStraight';
-      src: url('喜鹊直率体简体版.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-    @font-face {
       font-family: 'MaokenAssortedSans-Lite';
       src: url('MaokenAssortedSans-Lite.otf') format('opentype');
       font-weight: normal;
       font-style: normal;
-   }
+    }
 
     html, body {
       margin: 0;
@@ -61,19 +55,15 @@
       margin: 0 auto;
     }
 
-    .search-container {
-      width: 343px;
-      height: 72px;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
-    .search-box {
+    .search-container, .search-box {
       width: 343px;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .search-container {
+      height: 72px;
     }
 
     .search-content {
@@ -99,7 +89,6 @@
       font-size: 16px;
       line-height: 28px;
       color: #757575;
-      font-family: 'MaokenAssortedSans-Lite', sans-serif;
     }
 
     .ad-card {
@@ -121,76 +110,20 @@
       height: 56px;
       font-size: 28px;
       color: #000000;
-      font-family: 'MaokenAssortedSans-Lite', sans-serif;
       line-height: 1.2;
     }
 
-    .toolbar-section {
+    .recommend-section, .toolbar-section {
       width: 343px;
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
 
-    .toolbar-title {
+    .recommend-title, .toolbar-title {
       font-size: 28px;
       height: 28px;
       color: #000000;
-      font-family: 'MaokenAssortedSans-Lite', sans-serif;
-    }
-
-    .toolbar-list {
-      display: flex;
-      gap: 25px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding-bottom: 8px;
-      height: 120px;
-    }
-
-    .toolbar-item {
-      flex: 0 0 auto;
-      width: 95px;
-      height: 120px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(216, 188, 188, 0.8), rgba(236, 238, 221, 0.4));
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-
-    .toolbar-icon {
-      width: 40px;
-      height: 40px;
-      fill: #212121;
-    }
-
-    .toolbar-text {
-      width: 95px;
-      height: 30px;
-      font-size: 20px;
-      line-height: 30px;
-      text-align: center;
-      font-family: 'MaokenAssortedSans-Lite', sans-serif;
-      color: #212121;
-    }
-
-    .recommend-section {
-      width: 343px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .recommend-title {
-      font-size: 28px;
-      height: 28px;
-      color: #000000;
-      font-family: 'MaokenAssortedSans-Lite', sans-serif;
     }
 
     .recommend-card {
@@ -208,7 +141,6 @@
     }
 
     .recommend-text {
-      font-family: 'MaokenAssortedSans-Lite', sans-serif;
       font-size: 48px;
       line-height: 1.2;
       color: #000000;
@@ -243,16 +175,55 @@
 
     .button-text {
       color: white;
-      font-family: 'MaokenAssortedSans-Lite', sans-serif;
       font-size: 24px;
       line-height: 28px;
       height: 28px;
     }
 
-      .bottom-nav {
+    .toolbar-list {
+      display: flex;
+      gap: 25px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 8px;
+      height: 120px;
+    }
+
+    .toolbar-item {
+      flex: 0 0 auto;
+      width: 95px;
+      height: 120px;
+      border-radius: 20px;
+        background-image: url('tool_background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .toolbar-icon {
+      width: 40px;
+      height: 40px;
+      fill: #212121;
+    }
+
+    .toolbar-text {
+      width: 95px;
+      height: 30px;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      color: #212121;
+    }
+
+    .bottom-nav {
       width: 100%;
       height: 98px;
-      background-color: rgb(205, 217, 209);
+      background-color: rgba(205, 217, 209, 0.9);
       display: flex;
       justify-content: space-between;
       padding: 8px 16px 16px;
@@ -272,7 +243,6 @@
       justify-content: flex-start;
       gap: 4px;
       padding: 8px;
-      box-sizing: border-box;
     }
 
     .nav-icon {
@@ -283,11 +253,6 @@
       justify-content: center;
       padding: 2px;
       border-radius: 999px;
-      box-sizing: border-box;
-    }
-
-    .nav-icon.selected svg {
-      fill: #212121;
     }
 
     .nav-text {
@@ -295,12 +260,10 @@
       height: 33px;
       font-size: 20px;
       color: #212121;
-      font-family: 'MaokenAssortedSans-Lite', sans-serif;
       text-align: center;
     }
   </style>
 </head>
-<body>
 <body>
   <div class="page-container">
     <div class="big-container">
@@ -319,6 +282,19 @@
           <!-- 广告卡片区域 -->
           <div class="ad-card">
             <div class="ad-text">做问卷时害怕自己说谎</div>
+          </div>
+
+          <!-- 测试推荐区域 -->
+          <div class="recommend-section">
+            <div class="recommend-title">测试推荐</div>
+            <div class="recommend-card">
+              <div class="recommend-text">心理体温计</div>
+              <a href="consent.html" class="recommend-button">
+                <div class="button-box">
+                  <div class="button-text">开始</div>
+                </div>
+              </a>
+            </div>
           </div>
 
           <!-- 工具栏区域 -->
@@ -344,18 +320,6 @@
             </div>
           </div>
 
-          <!-- 测试推荐区域 -->
-          <div class="recommend-section">
-            <div class="recommend-title">测试推荐</div>
-            <div class="recommend-card">
-              <div class="recommend-text">心理体温计</div>
-               <a href="consent.html" class="recommend-button">
-                  <div class="button-box">
-                    <div class="button-text">开始</div>
-                  </div>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
