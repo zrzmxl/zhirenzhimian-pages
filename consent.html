@@ -1,114 +1,183 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <title>知情同意书</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=375, initial-scale=1.0">
+  <title>知人知面 - 知情同意书</title>
   <style>
-    body {
+    @font-face {
+      font-family: 'MaokenAssortedSans-Lite';
+      src: url('MaokenAssortedSans-Lite.otf') format('opentype');
+    }
+
+    html, body {
       margin: 0;
-      padding: 40px;
-      font-family: "Helvetica Neue", sans-serif;
-      background: url('classic background.png') no-repeat center center / cover;
-      color: #333;
-      max-width: 720px;
-      margin: auto;
+      padding: 0;
+      background-color: #6E8477;
+      font-family: 'MaokenAssortedSans-Lite', sans-serif;
     }
 
-    h1 {
-      font-size: 28px;
-      color: #774936;
-      margin-bottom: 20px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    ul {
-      padding-left: 20px;
-      line-height: 1.8;
+    .page-container {
+      width: 375px;
+      margin: 0 auto;
+      background-color: #6E8477;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    ul li::marker {
-      content: "· ";
-      font-size: 20px;
-      color: #e38d79;
+    .consent-wrapper {
+      width: 271px;
+      margin-top: 89px;
+      margin-left: 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 29px;
     }
 
-    .button-container {
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    .button-container button {
-        margin: 0 10px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 8px;
-        background-color: #ff9b9b;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-    }
-
-.button-container button:hover {
-  background-color: #ff7676;
-}
-
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      background-color: #ffb6b6;
-      color: white;
-      transition: all 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #ff8c8c;
-    }
-
-    .back-button {
-      background-color: #cccccc;
-    }
-
-    .back-button:hover {
-      background-color: #aaaaaa;
-    }
     .consent-box {
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 30px;
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        max-width: 640px;
-        margin: 60px auto;
-    }
-   .consent-box ul {
-    margin-bottom: 40px; /* 增加文字与按钮之间的距离 */}
-    .consent-box h1 {
-        text-align: center;
-        font-size: 28px;
-        font-weight: bold;
-        margin-bottom: 20px;
+      width: 271px;
+      min-height: 459px;
+      background-color: #E7EAEA;
+      border-radius: 10px;
+      padding: 40px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-sizing: border-box;
     }
 
+    .consent-textbox {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
 
+    .consent-title {
+      width: 100%;
+      font-size: 28px;
+      color: #000000;
+      text-align: center;
+    }
+
+    .consent-content {
+      width: 100%;
+      font-size: 20px;
+      line-height: 30px;
+      color: #000000;
+      text-align: left;
+    }
+
+    .start-button {
+      width: 271px;
+      height: 50px;
+      background-color: #665846;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #FFFFFF;
+      font-size: 20px;
+      text-align: center;
+      font-family: 'MaokenAssortedSans-Lite', sans-serif;
+      cursor: pointer;
+    }
+
+    .bottom-nav {
+      width: 100%;
+      height: 98px;
+      background-color: rgba(205, 217, 209, 0.9);
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 16px 16px;
+      gap: 0;
+      box-sizing: border-box;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    .nav-button {
+      width: 114px;
+      height: 74px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 4px;
+      padding: 8px;
+    }
+
+    .nav-icon {
+      width: 100%;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px;
+      border-radius: 999px;
+    }
+
+    .nav-text {
+      width: 100%;
+      height: 33px;
+      font-size: 20px;
+      color: #212121;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-    <div class="consent-box">
-        <h1>知情同意书</h1>
-        <ul>
-          <li>本测试用于了解受测者心理状态，结果仅供参考，不作为诊断依据。</li>
-          <li>所有填写内容将匿名处理，仅用于本项目的研究与服务优化。</li>
-          <li>参与本问卷是完全自愿的，您有权在任何时候退出。</li>
-          <li>如需进一步帮助，我们推荐联系专业心理服务。 </li>
-        </ul>
-      
-        <div class="button-container">
-          <button onclick="window.location.href='Moodcheck Intro.html'">同意</button>
-          <button onclick="alert('您需要同意知情同意书才能开始测试哦～')">不同意</button>
-          <button class="back-button" onclick="window.location.href='startpage.html'">返回开始页</button>
+  <div class="page-container">
+    <div class="consent-wrapper">
+      <div class="consent-box">
+        <div class="consent-textbox">
+          <div class="consent-title">知情同意书</div>
+          <div class="consent-content">
+            ·本测试用于了解受测者心理状态，结果仅供参考，不作为诊断依据。<br>
+            ·所有填写内容将匿名处理，仅用于本项目的研究与服务优化。<br>
+            ·参与本问卷是完全自愿的，您有权在任何时候退出。<br>
+            ·如需进一步帮助，我们推荐联系专业心理服务。
+          </div>
         </div>
+      </div>
+      <a href="Moodcheck Intro.html" class="start-button">
+        我已知晓，开始测试
+      </a>
+    </div>
+
+    <div class="bottom-nav">
+      <div class="nav-button">
+        <div class="nav-icon">
+          <img src="nav_settings.svg" alt="设置" />
+        </div>
+        <div class="nav-text">设置</div>
+      </div>
+      <a href="index.html" class="nav-button">
+        <div class="nav-icon">
+          <img src="nav_home.svg" alt="主页" />
+        </div>
+        <div class="nav-text">主页</div>
+      </a>
+      <div class="nav-button">
+        <div class="nav-icon selected">
+          <img src="nav_test_selected.svg" alt="测试" />
+        </div>
+        <div class="nav-text">测试</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
       </div>
       
 </body>
