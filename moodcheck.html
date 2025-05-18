@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>心理体温计问卷 - 知人知面</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: "Helvetica Neue", sans-serif;
+      background: url('background_moon_2.png') no-repeat center center / cover;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 40px 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: rgb(63, 11, 11);
+      text-align: center;
+    }
+
+    .question {
+      display: none;
+      margin-bottom: 30px;
+    }
+
+    .question.active {
+      display: block;
+    }
+
+    .question-index {
+      font-size: 16px;
+      font-weight: bold;
+      color: #7a3e3e;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0;
+    }
+
+    button {
+      background-color: #47101076;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> 心理体温计</h1>
+    <form id="quizForm">
+      <div class="question active" data-question="q1">
+        <div class="question-index">题目（1/6）</div>
+        <p>Q1：你好，欢迎来到知人知面，最近过得怎么样呢？</p>
+        <label><input type="radio" name="q1" value="0" data-text="非常好哦"> 非常好哦</label>
+        <label><input type="radio" name="q1" value="2" data-text="有时不顺心"> 有时不顺心</label>
+        <label><input type="radio" name="q1" value="1" data-text="和平时差不多"> 和平时差不多</label>
+        <label><input type="radio" name="q1" value="3" data-text="很不妙"> 很不妙</label>
+      </div>
+
+      <div class="question" data-question="q2">
+        <div class="question-index">题目（2/6）</div>
+        <p>Q2：最近睡得还好吗？</p>
+        <label><input type="radio" name="q2" value="0" data-text="很好，每天一觉到天亮"> 很好，每天一觉到天亮</label>
+        <label><input type="radio" name="q2" value="1" data-text="经常熬夜，但是时常是足够的"> 经常熬夜，但是时常是足够的</label>
+        <label><input type="radio" name="q2" value="3" data-text="睡眠较少/较多，睡得不太好"> 睡眠较少/较多，睡得不太好</label>
+        <label><input type="radio" name="q2" value="2" data-text="经常醒来或者做梦，好累"> 经常醒来或者多梦，睡眠时间过少，好累</label>
+      </div>
+
+      <div class="question" data-question="q3">
+        <div class="question-index">题目（3/6）</div>
+        <p>Q3：最近有没有哪件事让你特别难忘或很烦？</p>
+        <label><input type="radio" name="q3" value="0" data-text="有特别特别开心的事情"> 有特别特别开心的事情</label>
+        <label><input type="radio" name="q3" value="0" data-text="没有特别开心的，普通的生活也不错"> 没有特别开心的，普通的生活也不错</label>
+        <label><input type="radio" name="q3" value="1.5" data-text="有点烦心事，偶尔会想起"> 有点烦心事，偶尔会想起</label>
+        <label><input type="radio" name="q3" value="3" data-text="有件事反复影响我，很难放下"> 有件事反复影响我，很难放下</label>
+      </div>
+
+      <div class="question" data-question="q4">
+        <div class="question-index">题目（4/6）</div>
+        <p>Q4：做事的状态如何呢？</p>
+        <label><input type="radio" name="q4" value="2" data-text="思绪完全停不下来，大脑转速过高"> 思绪完全停不下来，大脑转速过高</label>
+        <label><input type="radio" name="q4" value="0" data-text="大部分时候可以专心做事，思路也很清楚"> 大部分时候可以专心做事，思路也很清楚</label>
+        <label><input type="radio" name="q4" value="1" data-text="有时发呆分神，但是收的回来"> 有时发呆分神，但是收的回来</label>
+        <label><input type="radio" name="q4" value="3" data-text="大脑一片空白"> 大脑一片空白</label>
+      </div>
+
+      <div class="question" data-question="q5">
+        <div class="question-index">题目（5/6）</div>
+        <p>Q5：你的人生意义更偏向？</p>
+        <label><input type="radio" name="q5" value="0" data-text="来自诗和远方，追求、有目标、或者理想"> 来自诗和远方，追求、有目标、或者理想</label>
+        <label><input type="radio" name="q5" value="0" data-text="身边的人，关系和陪伴给我力量"> 身边的人，关系和陪伴给我力量</label>
+        <label><input type="radio" name="q5" value="1" data-text="可能以后会知道的，我现在说不上来"> 可能以后会知道的，我现在说不上来</label>
+        <label><input type="radio" name="q5" value="3" data-text="感觉人生没有意义…"> 感觉人生没有意义…</label>
+      </div>
+
+      <div class="question" data-question="q6">
+        <div class="question-index">题目（6/6）</div>
+        <p>Q6：你喜欢现在的自己吗？</p>
+        <label><input type="radio" name="q6" value="0" data-text="是的，我很满意现在自己的状态"> 是的，我很满意现在自己的状态</label>
+        <label><input type="radio" name="q6" value="0.5" data-text="人无完人，喜欢一部分"> 人无完人，喜欢一部分</label>
+        <label><input type="radio" name="q6" value="2" data-text="人总会活成自己不喜欢的样子吧"> 人总会活成自己不喜欢的样子吧</label>
+        <label><input type="radio" name="q6" value="8" data-text="我希望这样的我马上消失"> 我希望这样的我马上消失</label>
+      </div>
+
+      <input type="hidden" name="percent" id="percentField" />
+      <button type="button" id="nextBtn">下一题</button>
+    </form>
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll(".question");
+    const nextBtn = document.getElementById("nextBtn");
+    const form = document.getElementById("quizForm");
+    let currentIndex = 0;
+
+    nextBtn.addEventListener("click", async () => {
+      const current = questions[currentIndex];
+      const selected = current.querySelector("input:checked");
+
+      if (!selected) {
+        alert("请选择一个选项再继续哦～");
+        return;
+      }
+
+      const inputName = selected.name;
+      const textValue = selected.getAttribute("data-text");
+      const scoreValue = selected.value;
+
+      const textInput = document.createElement("input");
+      textInput.type = "hidden";
+      textInput.name = `${inputName}_text`;
+      textInput.value = textValue;
+
+      const scoreInput = document.createElement("input");
+      scoreInput.type = "hidden";
+      scoreInput.name = `${inputName}_score`;
+      scoreInput.value = scoreValue;
+
+      form.appendChild(textInput);
+      form.appendChild(scoreInput);
+
+      current.classList.remove("active");
+      currentIndex++;
+
+      if (currentIndex < questions.length) {
+        questions[currentIndex].classList.add("active");
+      } else {
+        let total = 0;
+        for (const field of ["q1", "q2", "q3", "q4", "q5", "q6"]) {
+          const el = document.querySelector(`input[name='${field}']:checked`);
+          if (el) total += parseFloat(el.value);
+        }
+        const percent = +(100 - (total / 20.5) * 100).toFixed(1);
+        document.getElementById("percentField").value = percent;
+
+        nextBtn.innerText = "提交中，请稍后……";
+        nextBtn.disabled = true;
+
+        const formData = new FormData(form);
+        const res = await fetch("https://zhirenzhimian.zhirenzhimianxinli.workers.dev/", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (res.ok) {
+          window.location.href = `moodchecksummary.html?percent=${percent}`;
+        } else {
+          const text = await res.text();
+          alert("提交失败，请稍后再试！\n" + text);
+          nextBtn.innerText = "提交失败，请重试";
+          nextBtn.disabled = false;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

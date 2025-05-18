@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=375, initial-scale=1.0">
+  <title>知人知面 - 首页</title>
+  <style>
+    @font-face {
+      font-family: 'MaokenAssortedSans-Lite';
+      src: url('MaokenAssortedSans-Lite.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #6E8477;
+      height: 100%;
+    }
+
+    .page-container {
+      width: 375px;
+      height: 812px;
+      margin: 0 auto;
+      background-color: #6E8477;
+      font-family: 'MaokenAssortedSans-Lite', sans-serif;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .big-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .scroll-area {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .small-container {
+      width: 363px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding-top: 19px;
+      padding-bottom: 120px;
+      margin: 0 auto;
+    }
+
+    .search-container, .search-box {
+      width: 343px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-container {
+      height: 72px;
+    }
+
+    .search-content {
+      width: 100%;
+      height: 52px;
+      background-color: #EFE7DC;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      gap: 8px;
+      box-sizing: border-box;
+    }
+
+    .search-icon {
+      width: 15px;
+      height: 15px;
+      display: block;
+      fill: #212121;
+    }
+
+    .search-text {
+      font-size: 16px;
+      line-height: 28px;
+      color: #757575;
+    }
+
+    .ad-card {
+      width: 343px;
+      height: 128px;
+      border-radius: 16px;
+      overflow: hidden;
+      background-image: url('ad_card.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .ad-text {
+      position: absolute;
+      top: 36px;
+      left: 16px;
+      width: 168px;
+      height: 56px;
+      font-size: 28px;
+      color: #000000;
+      line-height: 1.2;
+    }
+
+    .recommend-section, .toolbar-section {
+      width: 343px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .recommend-title, .toolbar-title {
+      font-size: 28px;
+      height: 28px;
+      color: #000000;
+    }
+
+    .recommend-card {
+      width: 100%;
+      height: 192px;
+      border-radius: 16px;
+      background-image: url('recommend_bg.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 29px 34.5px 20px;
+      box-sizing: border-box;
+    }
+
+    .recommend-text {
+      font-size: 48px;
+      line-height: 1.2;
+      color: #000000;
+      width: 273px;
+      height: 85px;
+    }
+
+    .recommend-button {
+      width: 104px;
+      height: 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .button-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      width: 84px;
+      height: 44px;
+      background-color: #5D3D3D;
+      box-sizing: border-box;
+    }
+
+    .button-text {
+      color: white;
+      font-size: 24px;
+      line-height: 28px;
+      height: 28px;
+    }
+
+    .toolbar-list {
+      display: flex;
+      gap: 25px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 8px;
+      height: 120px;
+    }
+
+    .toolbar-item {
+      flex: 0 0 auto;
+      width: 95px;
+      height: 120px;
+      border-radius: 20px;
+        background-image: url('tool_background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .toolbar-icon {
+      width: 40px;
+      height: 40px;
+      fill: #212121;
+    }
+
+    .toolbar-text {
+      width: 95px;
+      height: 30px;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      color: #212121;
+    }
+
+    .bottom-nav {
+      width: 100%;
+      height: 98px;
+      background-color: rgba(205, 217, 209, 0.9);
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 16px 16px;
+      gap: 0;
+      box-sizing: border-box;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    .nav-button {
+      width: 114px;
+      height: 74px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 4px;
+      padding: 8px;
+    }
+
+    .nav-icon {
+      width: 100%;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px;
+      border-radius: 999px;
+    }
+
+    .nav-text {
+      width: 100%;
+      height: 33px;
+      font-size: 20px;
+      color: #212121;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <div class="big-container">
+      <div class="scroll-area">
+        <div class="small-container">
+          <!-- 搜索框容器 -->
+          <div class="search-container">
+            <div class="search-box">
+              <div class="search-content">
+                <img src="search-icon.svg" alt="搜索图标" class="search-icon" />
+                <span class="search-text">搜索</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 广告卡片区域 -->
+          <div class="ad-card">
+            <div class="ad-text">做问卷时害怕自己说谎</div>
+          </div>
+
+          <!-- 测试推荐区域 -->
+          <div class="recommend-section">
+            <div class="recommend-title">测试推荐</div>
+            <div class="recommend-card">
+              <div class="recommend-text">心理体温计</div>
+              <a href="consent.html" class="recommend-button">
+                <div class="button-box">
+                  <div class="button-text">开始</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- 工具栏区域 -->
+          <div class="toolbar-section">
+            <div class="toolbar-title">工具栏</div>
+            <div class="toolbar-list">
+              <div class="toolbar-item">
+                <img src="tool_guide.svg" alt="测试指南" class="toolbar-icon" />
+                <div class="toolbar-text">测试指南</div>
+              </div>
+              <div class="toolbar-item">
+                <img src="tool_history.svg" alt="测试记录" class="toolbar-icon" />
+                <div class="toolbar-text">测试记录</div>
+              </div>
+              <div class="toolbar-item">
+                <img src="tool_print.svg" alt="打印结果" class="toolbar-icon" />
+                <div class="toolbar-text">打印结果</div>
+              </div>
+              <div class="toolbar-item">
+                <img src="tool_feedback.svg" alt="反馈评价" class="toolbar-icon" />
+                <div class="toolbar-text">反馈评价</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="bottom-nav">
+      <div class="nav-button">
+        <div class="nav-icon">
+          <img src="nav_settings.svg" alt="设置" />
+        </div>
+        <div class="nav-text">设置</div>
+      </div>
+      <div class="nav-button">
+        <div class="nav-icon selected">
+          <img src="nav_home_selected.svg" alt="主页" />
+        </div>
+        <div class="nav-text">主页</div>
+      </div>
+      <div class="nav-button">
+        <div class="nav-icon">
+          <img src="nav_test.svg" alt="测试" />
+        </div>
+        <div class="nav-text">测试</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
